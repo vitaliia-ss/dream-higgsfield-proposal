@@ -118,20 +118,13 @@ ul.pts li span:first-child{font-size:12px;letter-spacing:.14em;text-transform:up
 .sk.b{mix-blend-mode:darken}
 .sk.w{mix-blend-mode:multiply;filter:brightness(1.16) contrast(1.06)}
 .sk.in{opacity:1;transform:rotate(var(--r,0deg))}
-.lone{width:min(250px,60%);margin-top:34px;--r:-2deg}
-@media(max-width:860px){.lone{display:none}}
-.board{position:relative;margin-top:clamp(36px,6vw,70px)}
-.board .kicker{color:var(--orange-deep)}
-.board .cap{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,32px);margin:6px 0 22px;max-width:700px}
-.sketches{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px)}
-.sketches .sk{width:100%;aspect-ratio:4/3;object-fit:cover}
-.sketches .sk:nth-child(1){--r:-.8deg}.sketches .sk:nth-child(2){--r:.7deg}.sketches .sk:nth-child(3){--r:-.5deg}
-.sketches .sk:nth-child(4){--r:.6deg}.sketches .sk:nth-child(5){--r:-.7deg}.sketches .sk:nth-child(6){--r:.5deg}
-.colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px);margin-top:clamp(22px,3vw,40px)}
-.colour .sk{width:100%;aspect-ratio:16/9;object-fit:cover;box-shadow:0 14px 30px #4a2c1b26}
-.colour .sk:nth-child(1){--r:.5deg}.colour .sk:nth-child(2){--r:-.4deg}.colour .sk:nth-child(3){--r:.4deg}
-.board .cap2{margin:34px 0 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);font-weight:600}
-@media(max-width:700px){.sketches{grid-template-columns:repeat(2,1fr)}.colour{grid-template-columns:1fr}}
+.scatter{position:relative;height:clamp(300px,29vw,400px);margin-top:30px}
+.scatter .sk{position:absolute;opacity:0}
+.scatter .sk.in{opacity:.92}
+.scatter .s1{width:56%;left:0;top:0;--r:-1.8deg}
+.scatter .s2{width:46%;left:54%;top:clamp(80px,8.6vw,124px);--r:2deg}
+.scatter .s3{width:44%;left:3%;top:clamp(170px,16.5vw,236px);--r:-1deg}
+@media(max-width:860px){.scatter{display:none}}
 
 /* breakdown */
 .inv{background:var(--black);padding:clamp(60px,9vw,120px) 0}
@@ -276,7 +269,11 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
         <div class="num">03</div>
         <h2>The Dream Movie</h2>
         <p class="sub">Simon Squibb's story as an animated feature film or series, made on Higgsfield and released together.</p>
-        <img class="sk b lone" src="assets/storyboard/boy.jpg" alt="Pencil sketch of a young boy looking up, hopeful">
+        <div class="scatter" aria-hidden="true">
+          <img class="sk b s1" src="assets/storyboard/mow.jpg" alt="">
+          <img class="sk b s2" src="assets/storyboard/mentor.jpg" alt="">
+          <img class="sk w s3" src="assets/storyboard/world.jpg" alt="">
+        </div>
       </div>
       <div>
         <ul class="pts">
@@ -288,24 +285,6 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
           <li><span>Timeline</span><span>Writing the script can take up to six months. Production resourcing is scoped once we agree the deal.</span></li>
         </ul>
         <p class="note"><b>Why it works.</b> It is advertising for Higgsfield in the form of a film: proof that the platform can carry a full story, as Higgsfield has shown with its own feature-length AI film. Think of it as building a DreamWorks together. Because ownership of AI-generated work is still unsettled, we would structure it as a paid production, with rights terms agreed together.</p>
-      </div>
-    </div>
-    <div class="board">
-      <p class="kicker">The storyboard</p>
-      <p class="cap">A first look at the story, frame by frame.</p>
-      <div class="sketches">
-        <img class="sk b" src="assets/storyboard/mow.jpg" alt="Sketch: a boy mows a lawn">
-        <img class="sk b" src="assets/storyboard/mentor.jpg" alt="Sketch: a boy listens to an older man">
-        <img class="sk b" src="assets/storyboard/adult.jpg" alt="Sketch: the grown-up Simon among a group of people">
-        <img class="sk w" src="assets/storyboard/laptop.jpg" alt="Sketch: Simon working at a laptop">
-        <img class="sk w" src="assets/storyboard/crowd.jpg" alt="Sketch: Simon speaking to a packed room">
-        <img class="sk w" src="assets/storyboard/world.jpg" alt="Sketch: Simon in front of a world map surrounded by people from around the world">
-      </div>
-      <p class="cap2">And how the same story could look on screen</p>
-      <div class="colour">
-        <img class="sk" src="assets/storyboard/c-mow.jpg" alt="A boy mows a lawn in front of a brick house, in colour">
-        <img class="sk" src="assets/storyboard/c-talk.jpg" alt="Simon talking with a young person across a table, in colour">
-        <img class="sk" src="assets/storyboard/c-stage.jpg" alt="Simon presenting to a room, in colour">
       </div>
     </div>
   </div>
