@@ -34,12 +34,16 @@ a{color:inherit}
 
 /* top bar */
 .bar{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:linear-gradient(#0B0907cc,#0B090700);transition:background .3s}
+.bar .brand{display:flex;align-items:center;gap:8px;text-decoration:none}
 .bar img{height:42px;width:auto;filter:brightness(0) invert(1);transition:filter .3s}
+.bar .b-x{font-family:var(--serif);font-size:16px;opacity:.7}
+.bar .b-hf{height:13px;width:auto;opacity:.9}
 .bar nav{display:flex;gap:20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .bar nav a{text-decoration:none;opacity:.85}
 .bar nav a:hover{opacity:1;color:var(--orange)}
 .bar.on-light{background:linear-gradient(#F1E1C3ee,#F1E1C300);color:var(--ink)}
-.bar.on-light img{filter:none}
+.bar.on-light .b-dream{filter:none}
+.bar.on-light .b-hf{filter:brightness(0)}
 @media(max-width:860px){.bar nav{display:none}}
 
 /* hero */
@@ -49,7 +53,7 @@ a{color:inherit}
 .hero.show::after{opacity:1}
 .hero .inner>*{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
 .hero.show .inner>*{opacity:1;transform:none}
-.hero.show .inner>.lock{transition-delay:.1s}
+.hero.show .inner>h1{transition-delay:.1s}
 .hero.show .inner>.tag{transition-delay:.25s}
 .hero.show .inner>.lede{transition-delay:.4s}
 .hero.show .inner>.scroll{transition-delay:.6s}
@@ -58,10 +62,9 @@ a{color:inherit}
 .hero .inner{position:relative;z-index:2;padding:110px 0 7vh}
 .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:600}
 .hero .kicker{color:#fff;text-shadow:0 1px 12px #000a}
-.lock{display:flex;align-items:center;gap:clamp(6px,1.8vw,24px);margin:6px 0 0 -2%}
-.lock .l-dream{height:clamp(84px,15vw,190px);width:auto}
-.lock .x{font-family:var(--serif);font-size:clamp(28px,5vw,64px);line-height:1;color:#fff;font-weight:400}
-.lock .l-hf{height:clamp(24px,4.6vw,58px);width:auto}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(46px,9.4vw,128px);line-height:.98;margin:12px 0 8px;letter-spacing:-.015em}
+h1 em{color:var(--orange);font-style:italic}
+h1 .x{font-weight:400;color:#fff;padding:0 .08em}
 .tag{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.6vw,46px);line-height:1.15;margin:4px 0 16px}
 .lede{max-width:700px;font-size:clamp(16px,1.9vw,20px);color:#efe5d9}
 .scroll{margin-top:24px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#fff}
@@ -86,6 +89,8 @@ h2{font-family:var(--serif);font-size:clamp(32px,4.6vw,58px);line-height:1.06;ma
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
 .facts div{border-top:2px solid var(--orange);padding-top:16px}
 .facts b{display:block;font-family:var(--serif);font-size:22px;margin-bottom:8px}
+.facts .hfb{height:27px;display:flex;align-items:center}
+.facts .hfb img{height:19px;width:auto}
 .facts p{color:#e1d6c9;font-size:16px}
 @media(max-width:860px){.facts{grid-template-columns:1fr}}
 
@@ -163,7 +168,8 @@ table.cmp{width:100%;border-collapse:collapse;font-size:16px}
 .cta .lockrow{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:54px}
 .cta .lockrow img:first-child{height:72px;width:auto;filter:brightness(0) invert(1)}
 .cta .lockrow span{font-family:var(--serif);font-size:30px}
-.cta .lockrow img:last-child{height:22px;width:auto}
+.cta .lockrow img:last-child{height:18px;width:auto;opacity:.9}
+footer .f-hf{display:inline-block;height:11px;width:auto;vertical-align:-1px;opacity:.7;margin:0 1px}
 footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);background:var(--black)}
 
 /* reveal on scroll */
@@ -175,7 +181,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
 <body>
 
 <header class="bar" id="bar">
-  <img src="assets/dream-logo.png" alt="Dream">
+  <a class="brand" href="#top" aria-label="Dream x Higgsfield"><img class="b-dream" src="assets/dream-logo.png" alt="Dream"><span class="b-x">&times;</span><img class="b-hf" src="assets/higgsfield-logo.svg" alt="Higgsfield"></a>
   <nav>
     <a href="#o1">01 YouTube</a>
     <a href="#o2">02 1BFS</a>
@@ -192,8 +198,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
   <button class="playbtn" id="playBtn" aria-label="Play video">&#9654;</button>
   <div class="wrap inner">
     <p class="kicker">Partnership proposal</p>
-    <h1 class="sr">Dream x Higgsfield</h1>
-    <div class="lock" aria-hidden="true"><img class="l-dream" src="assets/dream-logo.png" alt=""><span class="x">&times;</span><img class="l-hf" src="assets/higgsfield-logo.svg" alt=""></div>
+    <h1><em>Dream</em> <span class="x">&times;</span> Higgsfield</h1>
     <p class="tag">Every dream is a story to be told.</p>
     <p class="lede">Dream helps people start the business they have always dreamed of. Higgsfield is an AI platform that turns ideas into video. We are proposing three ways to work together: Simon Squibb's YouTube channel, a sponsorship at the 1 Billion Followers Summit (a creator conference in Dubai), and an animated feature film.</p>
     <a class="scroll" href="#why"><span>↓</span> See the three ideas</a>
@@ -207,7 +212,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <h2>Both of us turn an idea into something real.</h2>
     <div class="facts">
       <div><b>Dream</b><p>Dream helps people start the business they have always dreamed of. Simon Squibb, the creator behind Dream, makes YouTube videos about people chasing their dreams.</p></div>
-      <div><b>Higgsfield</b><p>Higgsfield is an AI video platform. Its stated mission is to make professional video creation available to anyone with an idea.</p></div>
+      <div><b class="hfb"><img src="assets/higgsfield-logo.svg" alt="Higgsfield"></b><p>Higgsfield is an AI video platform. Its stated mission is to make professional video creation available to anyone with an idea.</p></div>
       <div><b>Together</b><p>Higgsfield lets anyone turn a dream into a video, and Dream gives that an audience: Simon's YouTube channel, a live creator conference and a feature film. We want a long-term relationship that starts with something creative.</p></div>
     </div>
   </div>
@@ -358,7 +363,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <div class="lockrow"><img src="assets/dream-logo.png" alt="Dream"><span>&times;</span><img src="assets/higgsfield-logo.svg" alt="Higgsfield"></div>
   </div>
 </section>
-<footer>Dream x Higgsfield. Indicative proposal, subject to agreement.</footer>
+<footer>Dream x <img class="f-hf" src="assets/higgsfield-logo.svg" alt="Higgsfield">. Indicative proposal, subject to agreement.</footer>
 
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
