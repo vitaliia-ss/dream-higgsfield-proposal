@@ -70,8 +70,9 @@ h1 em{color:var(--orange);font-style:italic}
 .opt{position:relative;background:var(--paper);color:var(--ink);padding-bottom:clamp(64px,9vw,120px);overflow:hidden}
 .opt .art{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top;-webkit-mask-image:linear-gradient(#000 78%,transparent 100%);mask-image:linear-gradient(#000 78%,transparent 100%)}
 .opt .copy{position:relative;margin-top:calc(-1 * clamp(70px,13vw,200px))}
-.opt .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:center}
-@media(max-width:860px){.opt .grid{grid-template-columns:1fr}.opt .copy{margin-top:-60px}}
+.opt .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:start}
+.opt .grid>div:last-child{padding-top:clamp(44px,6.4vw,92px)}
+@media(max-width:860px){.opt .grid{grid-template-columns:1fr}.opt .grid>div:last-child{padding-top:0}.opt .copy{margin-top:-60px}}
 .num{font-family:var(--serif);font-style:italic;font-size:clamp(60px,9vw,112px);line-height:.85;color:var(--orange-deep)}
 h2{font-family:var(--serif);font-size:clamp(34px,4.8vw,60px);line-height:1.05;margin:8px 0 14px}
 .sub{font-size:18px;max-width:520px}
@@ -91,6 +92,7 @@ ul.pts li span:last-child{font-weight:600;text-align:right;white-space:nowrap}
 table{width:100%;border-collapse:collapse;margin-top:34px;font-size:16px}
 th,td{padding:16px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-family:var(--serif);font-size:20px}
+th .on{color:var(--orange)}
 td:first-child{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:18%}
 .scroll-x{overflow-x:auto}
 
@@ -162,7 +164,7 @@ footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);backgr
           <li><span>1 dedicated video</span><span>$100K</span></li>
           <li><span>5 monthly integrations</span><span>$25K each</span></li>
         </ul>
-        <p class="note">Simon makes a real ad for one of our products, such as Dream or Dream Brew, using Higgsfield from start to finish. A genuine demonstration of the platform in use, not a passing mention.</p>
+        <p class="note">Simon makes a real ad for one of our products, such as Dream or DreamBrew, using Higgsfield from start to finish. A genuine demonstration of the platform in use, not a passing mention.</p>
       </div>
     </div>
   </div>
@@ -224,7 +226,7 @@ footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <p class="sub">Take one, combine them, or start small and build from there. Let's talk it through.</p>
     <div class="scroll-x">
     <table>
-      <thead><tr><th></th><th>01 YouTube</th><th>02 1BFS</th><th>03 Movie</th></tr></thead>
+      <thead><tr><th></th><th><span class="on">01</span> YouTube</th><th><span class="on">02</span> 1BFS</th><th><span class="on">03</span> Movie</th></tr></thead>
       <tbody>
         <tr><td>Format</td><td>1 dedicated video + 5 monthly integrations</td><td>Headline sponsor, funnel placement, stand, includes Option 1</td><td>AI-animated feature or series</td></tr>
         <tr><td>Higgsfield's role</td><td>Tool used on camera</td><td>Tool used by attendees</td><td>Production platform</td></tr>
@@ -249,7 +251,7 @@ footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <div class="wrap">
       <h2>Let's do <em style="color:#fff;font-style:italic">this</em></h2>
       <p>Tell us which options you want to take forward and we'll agree the next step.</p>
-      <a class="btn" href="mailto:johnny@simonsquibb.com?subject=Dream%20x%20Higgsfield%3A%20next%20steps">Let's talk next steps</a>
+      <a class="btn" href="mailto:jonny@simonsquibb.com?subject=Dream%20x%20Higgsfield%3A%20next%20steps">Let's talk next steps</a>
       <img src="assets/dream-logo.png" alt="Dream">
     </div>
   </div>
