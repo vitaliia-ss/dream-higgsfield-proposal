@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dream x Higgsfield Partnership Proposal</title>
-<meta name="description" content="A partnership proposal between Dream, Simon Squibb and Higgsfield.">
+<title>Dream x Higgsfield</title>
+<meta name="description" content="Dream x Higgsfield: a partnership proposal.">
 <style>
 @font-face{font-family:"Playfair Display";font-weight:700;font-style:normal;src:url(fonts/PlayfairDisplay-Bold.ttf) format("truetype");font-display:swap}
 @font-face{font-family:"Playfair Display";font-weight:700;font-style:italic;src:url(fonts/PlayfairDisplay-BoldItalic.ttf) format("truetype");font-display:swap}
@@ -25,93 +25,151 @@
   --sans:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--black);color:#fff;font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--black);color:#fff;font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video{display:block;max-width:100%}
 a{color:inherit}
-.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
 
 /* top bar */
-.bar{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:linear-gradient(#0B0907cc,#0B090700);transition:background .3s}
-.bar img{height:44px;width:auto;filter:brightness(0) invert(1);transition:filter .3s}
-.bar nav{display:flex;gap:22px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.bar{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:linear-gradient(#0B0907cc,#0B090700);transition:background .3s}
+.bar img{height:42px;width:auto;filter:brightness(0) invert(1);transition:filter .3s}
+.bar nav{display:flex;gap:20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .bar nav a{text-decoration:none;opacity:.85}
 .bar nav a:hover{opacity:1;color:var(--orange)}
-.bar.on-light{background:linear-gradient(#F1E1C3dd,#F1E1C300);color:var(--ink)}
+.bar.on-light{background:linear-gradient(#F1E1C3ee,#F1E1C300);color:var(--ink)}
 .bar.on-light img{filter:none}
-@media(max-width:720px){.bar nav{display:none}}
+@media(max-width:860px){.bar nav{display:none}}
 
 /* hero */
 .hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;background:var(--black)}
 .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0B0907cc 0%,#0B090700 22%,#0B090700 38%,#0B0907d9 76%,#0B0907 100%);pointer-events:none;opacity:0;transition:opacity 1s ease}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0B0907cc 0%,#0B090700 22%,#0B090700 30%,#0B0907d9 70%,#0B0907 100%);pointer-events:none;opacity:0;transition:opacity 1s ease}
 .hero.show::after{opacity:1}
 .hero .inner>*{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
 .hero.show .inner>*{opacity:1;transform:none}
-.hero.show .inner>.lede{transition-delay:.25s}
-.hero.show .inner>.scroll{transition-delay:.5s}
+.hero.show .inner>.lock{transition-delay:.1s}
+.hero.show .inner>.tag{transition-delay:.25s}
+.hero.show .inner>.lede{transition-delay:.4s}
+.hero.show .inner>.scroll{transition-delay:.6s}
 .playbtn{position:absolute;z-index:3;left:50%;top:42%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;border:0;background:#ffffffe6;color:var(--black);font-size:30px;cursor:pointer;display:none}
 .playbtn.on{display:block}
-.hero .inner{position:relative;z-index:2;padding:120px 0 9vh}
-.kicker{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:600}
+.hero .inner{position:relative;z-index:2;padding:110px 0 7vh}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);font-weight:600}
 .hero .kicker{color:#fff;text-shadow:0 1px 12px #000a}
-h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,8.4vw,112px);line-height:1;margin:16px 0 20px;letter-spacing:-.01em}
-h1 em{color:var(--orange);font-style:italic}
-.lede{max-width:640px;font-size:clamp(17px,2vw,22px);color:#efe5d9}
-.scroll{margin-top:30px;display:inline-flex;gap:10px;align-items:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#fff}
+.lock{display:flex;align-items:center;gap:clamp(6px,1.8vw,24px);margin:6px 0 0 -2%}
+.lock .l-dream{height:clamp(84px,15vw,190px);width:auto}
+.lock .x{font-family:var(--serif);font-size:clamp(28px,5vw,64px);line-height:1;color:#fff;font-weight:400}
+.lock .l-hf{height:clamp(24px,4.6vw,58px);width:auto}
+.tag{font-family:var(--serif);font-style:italic;font-size:clamp(24px,3.6vw,46px);line-height:1.15;margin:4px 0 16px}
+.lede{max-width:700px;font-size:clamp(16px,1.9vw,20px);color:#efe5d9}
+.scroll{margin-top:24px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:#fff}
 .scroll span{display:inline-block;animation:bob 1.6s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(6px)}}
 
-.ctx{background:var(--black);padding:clamp(60px,9vw,110px) 0}
-.ctx h2{max-width:820px;margin:10px 0 16px}
-.ctx .sub{color:#e9dfd3;max-width:720px}
+/* phones and narrow screens: show the whole film frame, never crop it */
+@media(max-width:760px){
+  .hero{display:block;min-height:0}
+  .hero .poster,.hero video{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;margin-top:64px}
+  .hero video{position:absolute;left:0;top:0}
+  .hero::after{display:none}
+  .hero .inner{padding:22px 0 44px}
+  .playbtn{top:calc(64px + 28vw)}
+  .hero .inner>*{opacity:1;transform:none}
+}
 
-/* option sections: full-bleed retro art with the copy set on the paper */
-.opt{position:relative;background:var(--paper);color:var(--ink);padding-bottom:clamp(64px,9vw,120px);overflow:hidden}
+/* intro: why this fits */
+.ctx{background:var(--black);padding:clamp(56px,9vw,110px) 0}
+h2{font-family:var(--serif);font-size:clamp(32px,4.6vw,58px);line-height:1.06;margin:8px 0 14px}
+.ctx h2{max-width:860px;margin:10px 0 28px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.facts div{border-top:2px solid var(--orange);padding-top:16px}
+.facts b{display:block;font-family:var(--serif);font-size:22px;margin-bottom:8px}
+.facts p{color:#e1d6c9;font-size:16px}
+@media(max-width:860px){.facts{grid-template-columns:1fr}}
+
+/* idea sections: full-bleed retro art, copy set on the paper */
+.opt{position:relative;background:var(--paper);color:var(--ink);padding-bottom:clamp(56px,9vw,120px);overflow:hidden}
 .opt .art{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top;-webkit-mask-image:linear-gradient(#000 78%,transparent 100%);mask-image:linear-gradient(#000 78%,transparent 100%)}
-.opt .copy{position:relative;margin-top:calc(-1 * clamp(70px,13vw,200px))}
-.opt .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);align-items:start}
-.opt .grid>div:last-child{padding-top:clamp(44px,6.4vw,92px)}
-@media(max-width:860px){.opt .grid{grid-template-columns:1fr}.opt .grid>div:last-child{padding-top:0}.opt .copy{margin-top:-60px}}
-.num{font-family:var(--serif);font-style:italic;font-size:clamp(60px,9vw,112px);line-height:.85;color:var(--orange-deep)}
-h2{font-family:var(--serif);font-size:clamp(34px,4.8vw,60px);line-height:1.05;margin:8px 0 14px}
-.sub{font-size:18px;max-width:520px}
-.price{display:flex;align-items:baseline;gap:12px;margin:22px 0 4px}
-.price b{font-family:var(--serif);font-size:clamp(44px,5.4vw,70px);line-height:1;color:var(--orange-deep)}
-.price small{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--brown)}
-ul.pts{list-style:none;border-top:1px solid #1a141044;margin-top:6px}
-ul.pts li{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid #1a141044;font-size:16px}
-ul.pts li span:last-child{font-weight:600;text-align:right;white-space:nowrap}
-.note{margin-top:20px;font-size:16px;color:#3a2a1f;max-width:520px}
+.opt .copy{position:relative;margin-top:calc(-1 * clamp(40px,12vw,190px))}
+.opt .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,80px);align-items:start}
+.opt .grid>div:last-child{padding-top:clamp(40px,6vw,88px)}
+@media(max-width:860px){.opt .grid{grid-template-columns:1fr}.opt .grid>div:last-child{padding-top:0}.opt .copy{margin-top:-28px}}
+.num{font-family:var(--serif);font-style:italic;font-size:clamp(56px,8.5vw,108px);line-height:.85;color:var(--orange-deep)}
+.sub{font-size:clamp(17px,1.6vw,19px);max-width:520px}
+ul.pts{list-style:none;border-top:1px solid #1a141044}
+ul.pts li{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid #1a141044;font-size:16px}
+ul.pts li span:first-child{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);padding-top:3px;font-weight:600}
+@media(max-width:560px){ul.pts li{grid-template-columns:1fr;gap:4px}}
+.note{margin-top:18px;font-size:16px;color:#3a2a1f}
+.note b{color:var(--ink)}
+.fact{margin:22px 0 0;padding:16px 18px;background:#ffffff55;border-left:3px solid var(--orange-deep);font-size:15.5px;color:#2d2018}
+.fact b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:6px}
+.src{margin-top:8px;font-size:12px;color:#6b5646}
 
-/* summary */
-.sum{background:var(--black);padding:clamp(70px,10vw,130px) 0}
-.sum .kicker{color:var(--orange)}
-.sum h2{max-width:760px}
-.sum .sub{color:#e9dfd3}
-table{width:100%;border-collapse:collapse;margin-top:34px;font-size:16px}
-th,td{padding:16px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--serif);font-size:20px}
-th .on{color:var(--orange)}
-td:first-child{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:18%}
-.scroll-x{overflow-x:auto}
+/* storyboard: the movie slide becomes a sketch zone */
+.sk{border-radius:2px;opacity:0;transform:translateY(18px) rotate(var(--r,0deg));transition:opacity .9s ease,transform .9s ease}
+.sk.b{mix-blend-mode:darken}
+.sk.w{mix-blend-mode:multiply;filter:brightness(1.16) contrast(1.06)}
+.sk.in{opacity:1;transform:rotate(var(--r,0deg))}
+.lone{width:min(250px,60%);margin-top:34px;--r:-2deg}
+@media(max-width:860px){.lone{display:none}}
+.board{position:relative;margin-top:clamp(36px,6vw,70px)}
+.board .kicker{color:var(--orange-deep)}
+.board .cap{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,32px);margin:6px 0 22px;max-width:700px}
+.sketches{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px)}
+.sketches .sk{width:100%;aspect-ratio:4/3;object-fit:cover}
+.sketches .sk:nth-child(1){--r:-.8deg}.sketches .sk:nth-child(2){--r:.7deg}.sketches .sk:nth-child(3){--r:-.5deg}
+.sketches .sk:nth-child(4){--r:.6deg}.sketches .sk:nth-child(5){--r:-.7deg}.sketches .sk:nth-child(6){--r:.5deg}
+.colour{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px);margin-top:clamp(22px,3vw,40px)}
+.colour .sk{width:100%;aspect-ratio:16/9;object-fit:cover;box-shadow:0 14px 30px #4a2c1b26}
+.colour .sk:nth-child(1){--r:.5deg}.colour .sk:nth-child(2){--r:-.4deg}.colour .sk:nth-child(3){--r:.4deg}
+.board .cap2{margin:34px 0 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brown);font-weight:600}
+@media(max-width:700px){.sketches{grid-template-columns:repeat(2,1fr)}.colour{grid-template-columns:1fr}}
 
-/* terms + cta */
-.terms{background:var(--black);padding:10px 0 0}
-.terms ul{list-style:none;display:grid;gap:10px;max-width:640px;margin-top:14px}
+/* breakdown */
+.inv{background:var(--black);padding:clamp(60px,9vw,120px) 0}
+.inv .kicker{color:var(--orange)}
+.inv h2{max-width:760px}
+.inv .sub{color:#e9dfd3;margin-bottom:30px;max-width:680px}
+table.cmp{width:100%;border-collapse:collapse;font-size:16px}
+.cmp th,.cmp td{padding:18px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp thead th{font-family:var(--serif);font-size:22px;font-weight:700;border-bottom:2px solid var(--orange)}
+.cmp thead th .on{color:var(--orange);font-style:italic;margin-right:6px}
+.cmp tbody th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:16%;font-weight:600}
+.cmp .total td{font-family:var(--serif);font-size:clamp(34px,4vw,52px);line-height:1;border-bottom:0;padding-top:26px}
+.cmp .total th{vertical-align:bottom}
+.curnote{margin-top:12px;font-size:13px;color:var(--muted)}
+@media(max-width:900px){
+  .cmp,.cmp tbody,.cmp tr,.cmp td,.cmp th{display:block;width:100%}
+  .cmp thead{display:none}
+  .cmp tbody tr{padding:18px 0;border-bottom:1px solid var(--line)}
+  .cmp tbody th{padding:0 0 8px;border:0;width:auto}
+  .cmp td{padding:7px 0;border:0}
+  .cmp td::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:2px;font-weight:600}
+  .cmp .total td{padding-top:12px}
+}
+.terms{margin-top:44px}
+.terms ul{list-style:none;display:grid;gap:10px;max-width:700px;margin-top:14px}
 .terms li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:12px}
-.cta{position:relative;margin-top:70px;padding:clamp(90px,14vw,190px) 0;text-align:center;overflow:hidden;background:radial-gradient(90% 90% at 50% 120%,#FF5B00,#C83E00 30%,#0B0907 75%)}
+
+/* cta */
+.cta{position:relative;padding:clamp(80px,13vw,180px) 0;text-align:center;overflow:hidden;background:radial-gradient(90% 90% at 50% 120%,#FF5B00,#C83E00 30%,#0B0907 75%)}
 .cta h2{font-size:clamp(44px,8vw,108px);margin:0 0 16px}
-.cta p{max-width:560px;margin:0 auto 34px;font-size:19px}
-.btn{display:inline-block;background:#fff;color:var(--black);padding:17px 34px;border-radius:999px;font-weight:600;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;font-size:14px;transition:transform .2s,background .2s,color .2s}
+.cta p{max-width:560px;margin:0 auto 32px;font-size:19px}
+.btn{display:inline-block;background:#fff;color:var(--black);padding:17px 32px;border-radius:999px;font-weight:600;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;font-size:14px;transition:transform .2s,background .2s,color .2s}
 .btn:hover{background:var(--black);color:#fff;transform:translateY(-2px)}
-.cta img{height:80px;width:auto;margin:60px auto 0;filter:brightness(0) invert(1)}
-footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);background:var(--black)}
+.cta .lockrow{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:54px}
+.cta .lockrow img:first-child{height:72px;width:auto;filter:brightness(0) invert(1)}
+.cta .lockrow span{font-family:var(--serif);font-size:30px}
+.cta .lockrow img:last-child{height:22px;width:auto}
+footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);background:var(--black)}
 
 /* reveal on scroll */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.scroll span{animation:none}html{scroll-behavior:auto}.hero .inner>*{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.rv,.sk{opacity:1;transform:rotate(var(--r,0deg));transition:none}.scroll span{animation:none}html{scroll-behavior:auto}.hero .inner>*{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -122,6 +180,7 @@ footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <a href="#o1">01 YouTube</a>
     <a href="#o2">02 1BFS</a>
     <a href="#o3">03 Movie</a>
+    <a href="#invest">Breakdown</a>
     <a href="#touch">Let's do this</a>
   </nav>
 </header>
@@ -132,45 +191,52 @@ footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);backgr
   <video id="heroVid" autoplay muted playsinline preload="auto" poster="assets/intro-poster.jpg"><source src="videos/intro.mp4" type="video/mp4"></video>
   <button class="playbtn" id="playBtn" aria-label="Play video">&#9654;</button>
   <div class="wrap inner">
-    <p class="kicker">Dream x Higgsfield</p>
-    <h1>This is a<br><em>partnership</em> proposal.</h1>
-    <p class="lede">Every dream is a story waiting to be told. Simon helps people start theirs. Higgsfield gives them the tools to tell it on screen.</p>
-    <a class="scroll" href="#o1"><span>↓</span> See the three options</a>
+    <p class="kicker">Partnership proposal</p>
+    <h1 class="sr">Dream x Higgsfield</h1>
+    <div class="lock" aria-hidden="true"><img class="l-dream" src="assets/dream-logo.png" alt=""><span class="x">&times;</span><img class="l-hf" src="assets/higgsfield-logo.svg" alt=""></div>
+    <p class="tag">Every dream is a story to be told.</p>
+    <p class="lede">Dream helps people start the business they have always dreamed of. Higgsfield is an AI platform that turns ideas into video. We are proposing three ways to work together: Simon Squibb's YouTube channel, a sponsorship at the 1 Billion Followers Summit (a creator conference in Dubai), and an animated feature film.</p>
+    <a class="scroll" href="#why"><span>↓</span> See the three ideas</a>
   </div>
 </section>
 
-<!-- CONTEXT -->
-<section class="ctx">
+<!-- WHY THIS FITS -->
+<section class="ctx" id="why">
   <div class="wrap">
-    <p class="kicker">The proposal</p>
-    <h2>A long-term partnership, starting with something creative.</h2>
-    <p class="sub">Higgsfield is looking for a lasting relationship that begins with something creative. Here are three ways to do that, each with indicative pricing and a clear role for Higgsfield. Each one works on its own, and they can be combined.</p>
+    <p class="kicker">Why this fits</p>
+    <h2>Both of us turn an idea into something real.</h2>
+    <div class="facts">
+      <div><b>Dream</b><p>Dream helps people start the business they have always dreamed of. Simon Squibb, the creator behind Dream, makes YouTube videos about people chasing their dreams.</p></div>
+      <div><b>Higgsfield</b><p>Higgsfield is an AI video platform. Its stated mission is to make professional video creation available to anyone with an idea.</p></div>
+      <div><b>Together</b><p>Higgsfield lets anyone turn a dream into a video, and Dream gives that an audience: Simon's YouTube channel, a live creator conference and a feature film. We want a long-term relationship that starts with something creative.</p></div>
+    </div>
   </div>
 </section>
 
-<!-- OPTION 1 -->
+<!-- IDEA 1 -->
 <section class="opt" id="o1" data-light>
   <img class="art" src="assets/leap-summit.jpg" alt="A figure at the summit of a mountain, arms raised, in front of a rising sun">
   <div class="wrap copy rv">
     <div class="grid">
       <div>
         <div class="num">01</div>
-        <h2>YouTube Integration</h2>
-        <p class="sub">Higgsfield, front and centre on Simon's channel.</p>
-        <div class="price"><b>$225K</b><small>total</small></div>
+        <h2>Simon builds with Higgsfield, on camera</h2>
+        <p class="sub">A flagship YouTube video and five follow-ups in which Simon Squibb uses Higgsfield to make real ads for Dream's own products.</p>
       </div>
       <div>
         <ul class="pts">
-          <li><span>1 dedicated video</span><span>$100K</span></li>
-          <li><span>5 monthly integrations</span><span>$25K each</span></li>
+          <li><span>Flagship</span><span>One dedicated video on Simon's YouTube channel, with an extended segment where he uses Higgsfield.</span></li>
+          <li><span>Follow-ups</span><span>Five further videos, each featuring Higgsfield.</span></li>
+          <li><span>Commitment</span><span>Six months minimum.</span></li>
+          <li><span>Promotion</span><span>Short clips cut from the videos, to send viewers to the full video.</span></li>
         </ul>
-        <p class="note">Simon makes a real ad for one of our products, such as Dream or DreamBrew, using Higgsfield from start to finish. A genuine demonstration of the platform in use, not a passing mention.</p>
+        <p class="note"><b>What it looks like.</b> Simon shows the process, start to finish. In one video he makes an ad for Dream, walks through its features and shows how Higgsfield produced the ad. In another he creates an ad for DreamBrew, another Dream product, entirely with AI. It is a working demonstration, not a passing mention, so viewers see exactly what they could build for their own business.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OPTION 2 -->
+<!-- IDEA 2 -->
 <section class="opt" id="o2" data-light>
   <img class="art" src="assets/hero-leap.jpg" alt="A figure leaping across a gap between two cliffs, in front of a large orange sun">
   <div class="wrap copy rv">
@@ -178,89 +244,125 @@ footer{padding:26px 0;text-align:center;font-size:12px;color:var(--muted);backgr
       <div>
         <div class="num">02</div>
         <h2>1BFS Activation</h2>
-        <p class="sub">Higgsfield as headline creator sponsor of the Dream space at the 1 Billion Follower Summit (1BFS).</p>
-        <div class="price"><b>~£525K</b><small>total, includes the YouTube integration</small></div>
+        <p class="sub">Higgsfield becomes headline creator sponsor of Dream's space at the 1 Billion Followers Summit (1BFS), with an online and an in-person activation.</p>
+        <div class="fact"><b>What is 1BFS?</b>The 1 Billion Followers Summit is a creator conference in Dubai that describes itself as the largest of its kind. The 2026 edition brought together over 15,000 creators, 500 speakers and 150 CEOs. The next one runs 8 to 10 January 2027.<div class="src">Figures published by the organisers.</div></div>
+        <div class="fact"><b>What is 100 Dreams?</b>Dream's programme at 1BFS. People with a business dream apply online, 100 are selected, and they take part in the conference and a six-week kickstart afterwards.</div>
       </div>
       <div>
         <ul class="pts">
-          <li><span>Option 1 YouTube integration, wrapped in</span><span>Included</span></li>
-          <li><span>Headline creator sponsorship of the Dream space</span><span>~£200K</span></li>
-          <li><span>In-funnel placement + physical stand activation</span><span>~£100K on top</span></li>
+          <li><span>Sponsorship</span><span>Headline creator sponsor of Dream's space at 1BFS, for the year.</span></li>
+          <li><span>Online</span><span>A "Create with Higgsfield" button inside the 100 Dreams application, the online form people complete to apply. Applicants who would rather not film themselves can make a 60-second animated character clip about their dream instead.</span></li>
+          <li><span>In person</span><span>A Higgsfield stand within Dream's space at 1BFS, where visitors generate their own animated character on the spot.</span></li>
+          <li><span>Content</span><span>Posts about the activation, plus the YouTube integration from idea 01.</span></li>
+          <li><span>Optional</span><span>A performance deal (CPA: Higgsfield pays a fee for each new user we bring) on top of the sponsorship.</span></li>
         </ul>
-        <p class="note">The hook: attendees who would rather not be on camera use Higgsfield to pitch their dream as an animated clip, so every attendee leaves with content made on your platform. An optional CPA deal can sit on top, available once the sponsorship fee is paid.</p>
+        <p class="note"><b>Why it works.</b> Every applicant who would rather not be on camera becomes a Higgsfield creator and leaves with a clip made on your platform. It slots into the 100 Dreams programme we are already running, so the only additions are the button, the stand and the posts.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OPTION 3 -->
+<!-- IDEA 3 -->
 <section class="opt" id="o3" data-light>
   <img class="art" src="assets/hero-rocket.jpg" alt="A rocket launching through clouds in front of a large orange sun">
-  <div class="wrap copy rv">
+  <div class="wrap copy">
     <div class="grid">
       <div>
         <div class="num">03</div>
         <h2>The Dream Movie</h2>
-        <p class="sub">Simon's story as an AI-animated feature or series, built on Higgsfield. Dream AI, brought to you by Higgsfield.</p>
-        <div class="price"><b>$3M</b><small>long-term flagship</small></div>
+        <p class="sub">Simon Squibb's story as an animated feature film or series, made on Higgsfield and released together.</p>
+        <img class="sk b lone" src="assets/storyboard/boy.jpg" alt="Pencil sketch of a young boy looking up, hopeful">
       </div>
       <div>
         <ul class="pts">
-          <li><span>Compute and production</span><span>Higgsfield</span></li>
-          <li><span>Script</span><span>Simonsquibb</span></li>
-          <li><span>Marketing rights</span><span>Higgsfield</span></li>
-          <li><span>Distribution and posts</span><span>Simon</span></li>
+          <li><span>Concept</span><span>A feature-length film about Simon's story, or an animated series.</span></li>
+          <li><span>Production</span><span>Higgsfield pays for the compute and produces the film using Higgsfield.</span></li>
+          <li><span>Story</span><span>Dream writes the story and the script.</span></li>
+          <li><span>Rights</span><span>Higgsfield gets the right to make the film with us, and a marketing story: look what you can build on Higgsfield.</span></li>
+          <li><span>Distribution</span><span>Higgsfield can take it to cinemas and YouTube, and Simon promotes it on his channels.</span></li>
+          <li><span>Timeline</span><span>Writing the script can take up to six months. Production resourcing is scoped once we agree the deal.</span></li>
         </ul>
-        <p class="note">Think of it as building a DreamWorks together: "look what you can build on our platform." A paid-for show, with rights and ownership terms shaped together.</p>
-        <p class="note">Production details, including the scriptwriter, director and resourcing, are scoped together once there is a soft yes. Scriptwriting alone can take up to 6 months, so we line up resourcing early.</p>
+        <p class="note"><b>Why it works.</b> It is advertising for Higgsfield in the form of a film: proof that the platform can carry a full story, as Higgsfield has shown with its own feature-length AI film. Think of it as building a DreamWorks together. Because ownership of AI-generated work is still unsettled, we would structure it as a paid production, with rights terms agreed together.</p>
+      </div>
+    </div>
+    <div class="board">
+      <p class="kicker">The storyboard</p>
+      <p class="cap">A first look at the story, frame by frame.</p>
+      <div class="sketches">
+        <img class="sk b" src="assets/storyboard/mow.jpg" alt="Sketch: a boy mows a lawn">
+        <img class="sk b" src="assets/storyboard/mentor.jpg" alt="Sketch: a boy listens to an older man">
+        <img class="sk b" src="assets/storyboard/adult.jpg" alt="Sketch: the grown-up Simon among a group of people">
+        <img class="sk w" src="assets/storyboard/laptop.jpg" alt="Sketch: Simon working at a laptop">
+        <img class="sk w" src="assets/storyboard/crowd.jpg" alt="Sketch: Simon speaking to a packed room">
+        <img class="sk w" src="assets/storyboard/world.jpg" alt="Sketch: Simon in front of a world map surrounded by people from around the world">
+      </div>
+      <p class="cap2">And how the same story could look on screen</p>
+      <div class="colour">
+        <img class="sk" src="assets/storyboard/c-mow.jpg" alt="A boy mows a lawn in front of a brick house, in colour">
+        <img class="sk" src="assets/storyboard/c-talk.jpg" alt="Simon talking with a young person across a table, in colour">
+        <img class="sk" src="assets/storyboard/c-stage.jpg" alt="Simon presenting to a room, in colour">
       </div>
     </div>
   </div>
 </section>
 
-<!-- SUMMARY -->
-<section class="sum">
+<!-- BREAKDOWN -->
+<section class="inv" id="invest">
   <div class="wrap">
-    <p class="kicker">At a glance</p>
-    <h2>Three options. We can do all of them together.</h2>
-    <p class="sub">Take one, combine them, or start small and build from there. Let's talk it through.</p>
-    <div class="scroll-x">
-    <table>
-      <thead><tr><th></th><th><span class="on">01</span> YouTube</th><th><span class="on">02</span> 1BFS</th><th><span class="on">03</span> Movie</th></tr></thead>
+    <p class="kicker">The breakdown</p>
+    <h2>How each idea is structured.</h2>
+    <p class="sub">Idea 02 includes idea 01, and the three can be combined. All figures are indicative and open to discussion.</p>
+    <table class="cmp">
+      <thead><tr><th></th><th><span class="on">01</span>YouTube</th><th><span class="on">02</span>1BFS</th><th><span class="on">03</span>Movie</th></tr></thead>
       <tbody>
-        <tr><td>Format</td><td>1 dedicated video + 5 monthly integrations</td><td>Headline sponsor, funnel placement, stand, includes Option 1</td><td>AI-animated feature or series</td></tr>
-        <tr><td>Higgsfield's role</td><td>Tool used on camera</td><td>Tool used by attendees</td><td>Production platform</td></tr>
-        <tr><td>Indicative price</td><td>$225K</td><td>~£525K</td><td>$3M</td></tr>
+        <tr><th>Format</th>
+          <td data-label="01 YouTube">One flagship YouTube video plus five further videos, over at least six months.</td>
+          <td data-label="02 1BFS">Headline sponsorship of Dream's space at the 1 Billion Followers Summit (1BFS), online and in person, plus everything in 01.</td>
+          <td data-label="03 Movie">An animated feature film or series based on Simon Squibb's story.</td></tr>
+        <tr><th>Higgsfield's role</th>
+          <td data-label="01 YouTube">The tool Simon uses on camera to make ads.</td>
+          <td data-label="02 1BFS">The tool applicants and visitors use to make a 60-second clip about their dream.</td>
+          <td data-label="03 Movie">Pays for the compute and produces the film on Higgsfield.</td></tr>
+        <tr><th>Dream's role</th>
+          <td data-label="01 YouTube">Simon makes and publishes the videos.</td>
+          <td data-label="02 1BFS">Hosts the activation: a button in the 100 Dreams application, a stand, and posts.</td>
+          <td data-label="03 Movie">Writes the story and script. Simon promotes the release.</td></tr>
+        <tr><th>Fee breakdown</th>
+          <td data-label="01 YouTube">$100K flagship video + 5 follow-ups at $25K each</td>
+          <td data-label="02 1BFS">$225K YouTube integration + $200K annual sponsorship + $100K for placement in the application and the stand</td>
+          <td data-label="03 Movie">One fee covering the story, the script and the marketing rights</td></tr>
+        <tr class="total"><th>Total</th>
+          <td data-label="01 YouTube">$225K</td>
+          <td data-label="02 1BFS">$525K</td>
+          <td data-label="03 Movie">$3M</td></tr>
       </tbody>
     </table>
+    <p class="curnote">All figures in US dollars.</p>
+    <div class="terms">
+      <p class="kicker">Terms</p>
+      <ul>
+        <li>Sponsorship fees are payable upfront.</li>
+        <li>Any CPA arrangement applies once the sponsorship fee is paid.</li>
+        <li>All figures are indicative, to be finalised together.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- TERMS + CTA -->
-<section class="terms" id="touch">
+<!-- CTA -->
+<section class="cta" id="touch">
   <div class="wrap">
-    <p class="kicker" style="color:var(--orange)">Terms</p>
-    <ul>
-      <li>Sponsorship fees are payable upfront.</li>
-      <li>Any CPA arrangement applies once the sponsorship fee is paid.</li>
-      <li>All pricing is indicative, to be finalised together.</li>
-    </ul>
-  </div>
-  <div class="cta">
-    <div class="wrap">
-      <h2>Let's do <em style="color:#fff;font-style:italic">this</em></h2>
-      <p>Tell us which options you want to take forward and we'll agree the next step.</p>
-      <a class="btn" href="mailto:jonny@simonsquibb.com?subject=Dream%20x%20Higgsfield%3A%20next%20steps">Let's talk next steps</a>
-      <img src="assets/dream-logo.png" alt="Dream">
-    </div>
+    <h2>Let's do <em style="color:#fff;font-style:italic">this</em></h2>
+    <p>Tell us which ideas you want to take forward and we'll agree the next step.</p>
+    <a class="btn" href="mailto:jonny@simonsquibb.com?subject=Dream%20x%20Higgsfield%3A%20next%20steps">Let's talk next steps</a>
+    <div class="lockrow"><img src="assets/dream-logo.png" alt="Dream"><span>&times;</span><img src="assets/higgsfield-logo.svg" alt="Higgsfield"></div>
   </div>
 </section>
 <footer>Dream x Higgsfield. Indicative proposal, subject to agreement.</footer>
 
 <script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.rv,.sk').forEach(el=>io.observe(el));
 
 // hero video: plays once, start to finish; headline appears after the face shot
 const hero=document.getElementById('top'),v=document.getElementById('heroVid'),pb=document.getElementById('playBtn');
@@ -277,7 +379,7 @@ if(v){
 }
 setTimeout(reveal,6500);
 
-// top bar goes dark-on-light over the cream option sections
+// top bar goes dark-on-light over the cream idea sections
 const bar=document.getElementById('bar');
 const lightEls=[...document.querySelectorAll('[data-light]')];
 function tick(){const y=bar.offsetHeight/2;let on=false;
