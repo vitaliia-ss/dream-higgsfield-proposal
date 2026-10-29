@@ -36,14 +36,11 @@ a{color:inherit}
 .bar{position:fixed;inset:0 0 auto 0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:linear-gradient(#0B0907cc,#0B090700);transition:background .3s}
 .bar .brand{display:flex;align-items:center;gap:8px;text-decoration:none}
 .bar img{height:42px;width:auto;filter:brightness(0) invert(1);transition:filter .3s}
-.bar .b-x{font-family:var(--serif);font-size:16px;opacity:.7}
-.bar .b-hf{height:13px;width:auto;opacity:.9}
 .bar nav{display:flex;gap:20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .bar nav a{text-decoration:none;opacity:.85}
 .bar nav a:hover{opacity:1;color:var(--orange)}
 .bar.on-light{background:linear-gradient(#F1E1C3ee,#F1E1C300);color:var(--ink)}
 .bar.on-light .b-dream{filter:none}
-.bar.on-light .b-hf{filter:brightness(0)}
 @media(max-width:860px){.bar nav{display:none}}
 
 /* hero */
@@ -91,6 +88,7 @@ h2{font-family:var(--serif);font-size:clamp(32px,4.6vw,58px);line-height:1.06;ma
 .facts b{display:block;font-family:var(--serif);font-size:22px;margin-bottom:8px}
 .facts .hfb{height:27px;display:flex;align-items:center}
 .facts .hfb img{height:19px;width:auto}
+.facts .dreamb img{height:48px;filter:brightness(0) invert(1)}
 .facts p{color:#e1d6c9;font-size:16px}
 @media(max-width:860px){.facts{grid-template-columns:1fr}}
 
@@ -131,23 +129,22 @@ ul.pts li span:first-child{font-size:12px;letter-spacing:.14em;text-transform:up
 .inv .kicker{color:var(--orange)}
 .inv h2{max-width:760px}
 .inv .sub{color:#e9dfd3;margin-bottom:30px;max-width:680px}
-table.cmp{width:100%;border-collapse:collapse;font-size:16px}
-.cmp th,.cmp td{padding:18px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-.cmp thead th{font-family:var(--serif);font-size:22px;font-weight:700;border-bottom:2px solid var(--orange)}
-.cmp thead th .on{color:var(--orange);font-style:italic;margin-right:6px}
-.cmp tbody th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);width:16%;font-weight:600}
-.cmp .total td{font-family:var(--serif);font-size:clamp(34px,4vw,52px);line-height:1;border-bottom:0;padding-top:26px}
-.cmp .total th{vertical-align:bottom}
-.curnote{margin-top:12px;font-size:13px;color:var(--muted)}
-@media(max-width:900px){
-  .cmp,.cmp tbody,.cmp tr,.cmp td,.cmp th{display:block;width:100%}
-  .cmp thead{display:none}
-  .cmp tbody tr{padding:18px 0;border-bottom:1px solid var(--line)}
-  .cmp tbody th{padding:0 0 8px;border:0;width:auto}
-  .cmp td{padding:7px 0;border:0}
-  .cmp td::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:2px;font-weight:600}
-  .cmp .total td{padding-top:12px}
-}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+@media(max-width:960px){.cards{grid-template-columns:1fr}}
+.card{position:relative;display:flex;flex-direction:column;padding:28px 26px 26px;border:1px solid var(--line);border-top:3px solid var(--orange);border-radius:6px;background:linear-gradient(180deg,#ffffff0f 0%,#ffffff03 55%,#FF5B0014 100%)}
+.card header{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.card .n{font-family:var(--serif);font-style:italic;color:var(--orange);font-size:40px;line-height:1}
+.card h3{font-family:var(--serif);font-size:26px;line-height:1.1}
+.card dl{margin-bottom:22px}
+.card dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-top:16px}
+.card dd{margin-top:4px;font-size:15.5px;color:#eee3d6}
+.card .fees{list-style:none;margin-top:auto;border-top:1px solid var(--line)}
+.card .fees li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.card .fees li span:last-child{font-weight:600;white-space:nowrap}
+.card .tot{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;padding-top:18px}
+.card .tot small{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;max-width:9em}
+.card .tot b{font-family:var(--serif);font-size:clamp(46px,5vw,64px);line-height:1;font-weight:700}
+.curnote{margin-top:14px;font-size:13px;color:var(--muted)}
 .terms{margin-top:44px}
 .terms ul{list-style:none;display:grid;gap:10px;max-width:700px;margin-top:14px}
 .terms li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:12px}
@@ -174,7 +171,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
 <body>
 
 <header class="bar" id="bar">
-  <a class="brand" href="#top" aria-label="Dream x Higgsfield"><img class="b-dream" src="assets/dream-logo.png" alt="Dream"><span class="b-x">&times;</span><img class="b-hf" src="assets/higgsfield-logo.svg" alt="Higgsfield"></a>
+  <a class="brand" href="#top" aria-label="Dream"><img class="b-dream" src="assets/dream-logo.png" alt="Dream"></a>
   <nav>
     <a href="#o1">01 YouTube</a>
     <a href="#o2">02 1BFS</a>
@@ -204,7 +201,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <p class="kicker">Why this fits</p>
     <h2>Both of us turn an idea into something real.</h2>
     <div class="facts">
-      <div><b>Dream</b><p>Dream helps people start the business they have always dreamed of. Simon Squibb, the creator behind Dream, makes YouTube videos about people chasing their dreams.</p></div>
+      <div><b class="hfb dreamb"><img src="assets/dream-logo.png" alt="Dream"></b><p>Dream helps people start the business they have always dreamed of. Simon Squibb, the creator behind Dream, makes YouTube videos about people chasing their dreams and has a following of 28 million.</p></div>
       <div><b class="hfb"><img src="assets/higgsfield-logo.svg" alt="Higgsfield"></b><p>Higgsfield is an AI video platform. Its stated mission is to make professional video creation available to anyone with an idea.</p></div>
       <div><b>Together</b><p>Higgsfield lets anyone turn a dream into a video, and Dream gives that an audience: Simon's YouTube channel, a live creator conference and a feature film. We want a long-term relationship that starts with something creative.</p></div>
     </div>
@@ -243,18 +240,19 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
         <div class="num">02</div>
         <h2>1BFS Activation</h2>
         <p class="sub">Higgsfield becomes headline creator sponsor of Dream's space at the 1 Billion Followers Summit (1BFS), with an online and an in-person activation.</p>
-        <div class="fact"><b>What is 1BFS?</b>The 1 Billion Followers Summit is a creator conference in Dubai that describes itself as the largest of its kind. The 2026 edition brought together over 15,000 creators, 500 speakers and 150 CEOs. The next one runs 8 to 10 January 2027.<div class="src">Figures published by the organisers.</div></div>
-        <div class="fact"><b>What is 100 Dreams?</b>Dream's programme at 1BFS. People with a business dream apply online, 100 are selected, and they take part in the conference and a six-week kickstart afterwards.</div>
+        <div class="fact"><b>What is 1BFS?</b>The 1 Billion Followers Summit is a creator conference in Dubai, run by the UAE National Media Authority. The 2026 edition sold out with over 30,000 attendees, including more than 15,000 creators, and over 400 speakers are confirmed for 2027. The next one runs 8 to 10 January 2027.<div class="src">Sources: WAM, Zawya and Khaleej Times, January 2026.</div></div>
+        <div class="fact"><b>What is 100 Dreams?</b>Dream's programme with 1BFS. People apply online through Dream, and 100 winners each receive $10,000, flights to Dubai, a UAE company licence and a six-week online kickstart programme. Everyone who applies joins Dream and gets free help, whether they win or not.</div>
       </div>
       <div>
         <ul class="pts">
           <li><span>Sponsorship</span><span>Headline creator sponsor of Dream's space at 1BFS, for the year.</span></li>
-          <li><span>Online</span><span>A "Create with Higgsfield" button inside the 100 Dreams application, the online form people complete to apply. Applicants who would rather not film themselves can make a 60-second animated character clip about their dream instead.</span></li>
-          <li><span>In person</span><span>A Higgsfield stand within Dream's space at 1BFS, where visitors generate their own animated character on the spot.</span></li>
+          <li><span>Online</span><span>A "Create with Higgsfield" button inside the 100 Dreams application journey on Dream: people join Dream, apply and pitch their dream. Applicants who would rather not film themselves can make a 60-second animated character clip about their dream instead.</span></li>
+          <li><span>In person</span><span>A Higgsfield activation inside Dream's area at the summit, alongside the 100 Dreams gumball machine and the Dream Mentorship stand, where visitors generate their own animated character on the spot.</span></li>
+          <li><span>Reach</span><span>The 100 Dreams campaign aims for 1 billion views across social channels, led by Simon's following of 28 million.</span></li>
           <li><span>Content</span><span>Posts about the activation, plus the YouTube integration from idea 01.</span></li>
           <li><span>Optional</span><span>A performance deal (CPA: Higgsfield pays a fee for each new user we bring) on top of the sponsorship.</span></li>
         </ul>
-        <p class="note"><b>Why it works.</b> Every applicant who would rather not be on camera becomes a Higgsfield creator and leaves with a clip made on your platform. It slots into the 100 Dreams programme we are already running, so the only additions are the button, the stand and the posts.</p>
+        <p class="note"><b>Why it works.</b> Every applicant who would rather not be on camera becomes a Higgsfield creator and leaves with a clip made on your platform. It slots into the 100 Dreams programme we are already running, so the only additions are the button, the activation and the posts.</p>
       </div>
     </div>
   </div>
@@ -296,31 +294,49 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <p class="kicker">The breakdown</p>
     <h2>How each idea is structured.</h2>
     <p class="sub">Idea 02 includes idea 01, and the three can be combined. All figures are indicative and open to discussion.</p>
-    <table class="cmp">
-      <thead><tr><th></th><th><span class="on">01</span>YouTube</th><th><span class="on">02</span>1BFS</th><th><span class="on">03</span>Movie</th></tr></thead>
-      <tbody>
-        <tr><th>Format</th>
-          <td data-label="01 YouTube">One flagship YouTube video plus five further videos, over at least six months.</td>
-          <td data-label="02 1BFS">Headline sponsorship of Dream's space at the 1 Billion Followers Summit (1BFS), online and in person, plus everything in 01.</td>
-          <td data-label="03 Movie">An animated feature film or series based on Simon Squibb's story.</td></tr>
-        <tr><th>Higgsfield's role</th>
-          <td data-label="01 YouTube">The tool Simon uses on camera to make ads.</td>
-          <td data-label="02 1BFS">The tool applicants and visitors use to make a 60-second clip about their dream.</td>
-          <td data-label="03 Movie">Pays for the compute and produces the film on Higgsfield.</td></tr>
-        <tr><th>Dream's role</th>
-          <td data-label="01 YouTube">Simon makes and publishes the videos.</td>
-          <td data-label="02 1BFS">Hosts the activation: a button in the 100 Dreams application, a stand, and posts.</td>
-          <td data-label="03 Movie">Writes the story and script. Simon promotes the release.</td></tr>
-        <tr><th>Fee breakdown</th>
-          <td data-label="01 YouTube">$100K flagship video + 5 follow-ups at $25K each</td>
-          <td data-label="02 1BFS">$225K YouTube integration + $200K annual sponsorship + $100K for placement in the application and the stand</td>
-          <td data-label="03 Movie">One fee covering the story, the script and the marketing rights</td></tr>
-        <tr class="total"><th>Total</th>
-          <td data-label="01 YouTube">$225K</td>
-          <td data-label="02 1BFS">$525K</td>
-          <td data-label="03 Movie">$3M</td></tr>
-      </tbody>
-    </table>
+    <div class="cards">
+      <article class="card">
+        <header><span class="n">01</span><h3>YouTube Integration</h3></header>
+        <dl>
+          <dt>Format</dt><dd>One flagship YouTube video plus five further videos, over at least six months.</dd>
+          <dt>Higgsfield's role</dt><dd>The tool Simon uses on camera to make ads.</dd>
+          <dt>Dream's role</dt><dd>Simon makes and publishes the videos.</dd>
+        </dl>
+        <ul class="fees">
+          <li><span>Flagship video</span><span>$100K</span></li>
+          <li><span>5 follow-ups at $25K each</span><span>$125K</span></li>
+        </ul>
+        <div class="tot"><small>Total</small><b>$225K</b></div>
+      </article>
+      <article class="card">
+        <header><span class="n">02</span><h3>1BFS Activation</h3></header>
+        <dl>
+          <dt>Format</dt><dd>Headline sponsorship of Dream's space at the 1 Billion Followers Summit (1BFS), online and in person, plus everything in 01.</dd>
+          <dt>Higgsfield's role</dt><dd>The tool applicants and visitors use to make a 60-second clip about their dream.</dd>
+          <dt>Dream's role</dt><dd>Hosts the activation: a button in the 100 Dreams application, a place in Dream's area at the summit, and posts.</dd>
+        </dl>
+        <ul class="fees">
+          <li><span>YouTube integration (01)</span><span>$225K</span></li>
+          <li><span>Annual headline sponsorship</span><span>$200K</span></li>
+          <li><span>Placement in the application and the activation</span><span>$100K</span></li>
+        </ul>
+        <div class="tot"><small>Total</small><b>$525K</b></div>
+      </article>
+      <article class="card">
+        <header><span class="n">03</span><h3>The Dream Movie</h3></header>
+        <dl>
+          <dt>Format</dt><dd>An animated feature film or series based on Simon Squibb's story.</dd>
+          <dt>Higgsfield's role</dt><dd>Pays for the compute and produces the film on Higgsfield.</dd>
+          <dt>Dream's role</dt><dd>Writes the story and script. Simon promotes the release.</dd>
+        </dl>
+        <ul class="fees">
+          <li><span>Story and script</span><span>Dream</span></li>
+          <li><span>Compute and production</span><span>Higgsfield</span></li>
+          <li><span>Marketing rights</span><span>Higgsfield</span></li>
+        </ul>
+        <div class="tot"><small>One fee covering all of it</small><b>$3M</b></div>
+      </article>
+    </div>
     <p class="curnote">All figures in US dollars.</p>
     <div class="terms">
       <p class="kicker">Terms</p>
