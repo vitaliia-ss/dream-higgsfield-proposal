@@ -102,6 +102,7 @@ h2{font-family:var(--serif);font-size:clamp(32px,4.6vw,58px);line-height:1.06;ma
 .opt .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,80px);align-items:start}
 .opt .grid>div:last-child{padding-top:clamp(40px,6vw,88px)}
 @media(max-width:860px){.opt .grid{grid-template-columns:1fr}.opt .grid>div:last-child{padding-top:0}.opt .copy{margin-top:-28px}}
+.lvl{display:inline-block;margin-bottom:12px;padding:5px 12px;border:1px solid var(--orange-deep);border-radius:999px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--orange-deep)}
 .num{font-family:var(--serif);font-style:italic;font-size:clamp(56px,8.5vw,108px);line-height:.85;color:var(--orange-deep)}
 .sub{font-size:clamp(17px,1.6vw,19px);max-width:520px}
 ul.pts{list-style:none;border-top:1px solid #1a141044}
@@ -135,6 +136,7 @@ ul.pts li span:first-child{font-size:12px;letter-spacing:.14em;text-transform:up
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
 @media(max-width:960px){.cards{grid-template-columns:1fr}}
 .card{position:relative;display:flex;flex-direction:column;padding:28px 26px 26px;border:1px solid var(--line);border-top:3px solid var(--orange);border-radius:6px;background:linear-gradient(180deg,#ffffff0f 0%,#ffffff03 55%,#FF5B0014 100%)}
+.card .lvl-c{align-self:flex-start;margin-bottom:12px;padding:4px 11px;border:1px solid #FF5B0090;border-radius:999px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--orange)}
 .card header{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
 .card .n{font-family:var(--serif);font-style:italic;color:var(--orange);font-size:40px;line-height:1}
 .card h3{font-family:var(--serif);font-size:26px;line-height:1.1}
@@ -217,6 +219,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
   <div class="wrap copy rv">
     <div class="grid">
       <div>
+        <span class="lvl">Start here</span>
         <div class="num">01</div>
         <h2>Simon builds with Higgsfield on YouTube</h2>
         <p class="sub">A flagship YouTube video and five follow-ups in which Simon Squibb uses Higgsfield to make real ads for Dream's own products.</p>
@@ -240,6 +243,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
   <div class="wrap copy rv">
     <div class="grid">
       <div>
+        <span class="lvl">Go further</span>
         <div class="num">02</div>
         <h2>1BFS Activation</h2>
         <p class="sub">Higgsfield becomes headline creator sponsor of Dream's space at the 1 Billion Followers Summit (1BFS), with an online and an in-person activation.</p>
@@ -267,6 +271,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
   <div class="wrap copy">
     <div class="grid">
       <div>
+        <span class="lvl">Go big</span>
         <div class="num">03</div>
         <h2>The Dream Movie</h2>
         <p class="sub">Simon Squibb's story as an animated feature film or series, made on Higgsfield and released together.</p>
@@ -299,6 +304,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
     <p class="sub">Idea 02 includes idea 01, and the three can be combined. All figures are indicative and open to discussion.</p>
     <div class="cards">
       <article class="card">
+        <span class="lvl-c">Start here</span>
         <header><span class="n">01</span><h3>YouTube Integration</h3></header>
         <dl>
           <dt>Format</dt><dd>One flagship YouTube video plus five further videos, over at least six months.</dd>
@@ -312,6 +318,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
         <div class="tot"><small>Total</small><b>$225K</b></div>
       </article>
       <article class="card">
+        <span class="lvl-c">Go further</span>
         <header><span class="n">02</span><h3>1BFS Activation</h3></header>
         <dl>
           <dt>Format</dt><dd>Headline sponsorship of Dream's space at the 1 Billion Followers Summit (1BFS), online and in person, plus everything in 01.</dd>
@@ -326,6 +333,7 @@ footer{padding:24px 0;text-align:center;font-size:12px;color:var(--muted);backgr
         <div class="tot"><small>Total</small><b>$525K</b></div>
       </article>
       <article class="card">
+        <span class="lvl-c">Go big</span>
         <header><span class="n">03</span><h3>The Dream Movie</h3></header>
         <dl>
           <dt>Format</dt><dd>An animated feature film or series based on Simon Squibb's story.</dd>
